@@ -1,4 +1,4 @@
-
+import Head from 'next/head'
 import Header from '../components/Header'
 
 import PostList from '../components/PostList'
@@ -6,6 +6,9 @@ import { withApollo } from '../apollo/apollo'
 
 const IndexPage = () => (
   <div>
+    <Head>
+      <title>Sean's Travel Site</title>
+    </Head>
     <Header />
     <div>
       ℹ️ This example shows how to fetch all initial apollo queries on the
