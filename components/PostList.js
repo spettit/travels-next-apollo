@@ -6,6 +6,7 @@ const GET_TRIPS = gql`
 {
 trips {
 name
+Description
 CoverImage {
   url
 }
@@ -52,6 +53,7 @@ export default function PostList() {
             <div>
             {trip.name}
             </div>
+            <p>{trip.Description}</p>
             {trip.CoverImage && <img src={trip.CoverImage.url.replace( 'upload/', 'upload/w_200/')} />}
           </li>
         ))}
