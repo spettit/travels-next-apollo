@@ -1,14 +1,12 @@
-import App from '../components/App'
-import InfoBox from '../components/InfoBox'
 import Header from '../components/Header'
 
 import PostList from '../components/PostList'
-import { withApollo } from '../lib/apollo'
+import { withApollo } from '../apollo/apollo'
 
 const ClientOnlyPage = props => (
-  <App>
+  <div>
     <Header />
-    <InfoBox>
+    <div>
       ℹ️ This example shows how to disable apollos query fetching on the server.
       If you <a href="/client-only">reload</a> this page, you will see a loader
       since Apollo didn't fetch any data on the server. This allows{' '}
@@ -20,9 +18,9 @@ const ClientOnlyPage = props => (
         automatic static optimization
       </a>
       .
-    </InfoBox>
+    </div>
     <PostList />
-  </App>
+  </div>
 )
 
 export default withApollo()(ClientOnlyPage)

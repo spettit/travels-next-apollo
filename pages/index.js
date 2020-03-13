@@ -1,14 +1,13 @@
-import App from '../components/App'
-import InfoBox from '../components/InfoBox'
+
 import Header from '../components/Header'
 
 import PostList from '../components/PostList'
-import { withApollo } from '../lib/apollo'
+import { withApollo } from '../apollo/apollo'
 
 const IndexPage = () => (
-  <App>
+  <div>
     <Header />
-    <InfoBox>
+    <div>
       ℹ️ This example shows how to fetch all initial apollo queries on the
       server. If you <a href="/">reload</a> this page you won't see a loader
       since Apollo fetched all needed data on the server. This prevents{' '}
@@ -20,10 +19,10 @@ const IndexPage = () => (
         automatic static optimization
       </a>{' '}
       in favour of full Server-Side-Rendering.
-    </InfoBox>
+    </div>
 
     <PostList />
-  </App>
+  </div>
 )
 
 export default withApollo({ ssr: true })(IndexPage)
