@@ -1,24 +1,24 @@
-import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
-import ErrorMessage from './ErrorMessage'
+import { useQuery } from "@apollo/react-hooks";
+import gql from "graphql-tag";
+import ErrorMessage from "./ErrorMessage";
 
 const GET_TRIPS = gql`
-{
-trips {
-name
-Description
-CoverImage {
-  url
-}
-}
-}
+  {
+    trips {
+      id
+      name
+      commentary
+      CoverImage {
+        url
+      }
+    }
+  }
 `;
-
 
 export default function PostList() {
   const { loading, error, data, fetchMore, networkStatus } = useQuery(
     GET_TRIPS
-  )
+  );
 
   // const loadingMorePosts = networkStatus === NetworkStatus.fetchMore
 
@@ -39,10 +39,10 @@ export default function PostList() {
   //   })
   // }
 
-  if (error) return <ErrorMessage message="Error loading posts." />
-  if (loading) return <div>Loading</div>
+  if (error) return <ErrorMessage message="Error loading posts." />;
+  if (loading) return <div>Loading</div>;
 
-  const { trips } = data
+  const { trips } = data;
   // const areMorePosts = allPosts.length < _allPostsMeta.count
 
   return (
@@ -50,15 +50,17 @@ export default function PostList() {
       <ul>
         {trips.map((trip, index) => (
           <li key={trip.id}>
-            <div>
-            {trip.name}
-            </div>
-            <p>{trip.Description}</p>
-            {trip.CoverImage && <img src={trip.CoverImage.url.replace( 'upload/', 'upload/w_200/')} />}
+            <div>{trip.name}</div>
+            <p>{trip.commentary}</p>
+            {trip.CoverImage && (
+              <img
+                src={trip.CoverImage.url.replace("upload/", "upload/w_200/")}
+              />
+            )}
           </li>
         ))}
       </ul>
-      
+
       <style jsx>{`
         section {
           padding-bottom: 20px;
@@ -91,12 +93,12 @@ export default function PostList() {
           border-style: solid;
           border-width: 6px 4px 0 4px;
           border-color: #ffffff transparent transparent transparent;
-          content: '';
+          content: "";
           height: 0;
           margin-right: 5px;
           width: 0;
         }
       `}</style>
     </section>
-  )
+  );
 }
