@@ -34,7 +34,7 @@ export default function PostList() {
             <p>{trip.commentary}</p>
             {trip.CoverImage && (
               <img
-                src={trip.CoverImage.url.replace("upload/", "upload/w_200/")}
+                src={trip.CoverImage.url.replace("upload/", "upload/h_200/")}
               />
             )}
           </li>
