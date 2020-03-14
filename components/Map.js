@@ -51,8 +51,10 @@ const Map = () => {
   // const { state } = useContext(MapContext);
   const mapContainer = useRef(null);
   useEffect(() => {
-    map = new google.maps.Map(mapContainer.current, options);
-  }, []);
+      map = new google.maps.Map(mapContainer.current, options);
+    }
+    
+ );
 
   // useEffect(() => addMarkers(state.trips), [state.trips]);
 

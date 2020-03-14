@@ -1,5 +1,8 @@
 import Link from "next/link";
 import { withRouter } from "next/router";
+import { useContext } from 'react'
+
+import AppContext from '../app/context';
 
 import {
   Alignment,
@@ -13,7 +16,9 @@ import {
   Switch
 } from "@blueprintjs/core";
 
-const NavbarComponent = ({ router: { pathname } }) => (
+const NavbarComponent = ({ router: { pathname } }) => {
+  const {state} = useContext(AppContext)
+  return(
   <nav className="bp3-navbar bp3-dark">
     {/* <div style={{ margin: "0 auto", width: "480px" }}> */}
     <div className="bp3-navbar-group bp3-align-left">
@@ -25,13 +30,13 @@ const NavbarComponent = ({ router: { pathname } }) => (
           <button className="bp3-button bp3-minimal bp3-icon-home">Home</button>
         </a>
       </Link>
-      <Link href="/client-only">
+      {state.user && <Link href="/client-only">
         <a className={pathname === "/client-only" ? "is-active" : ""}>
           <button className="bp3-button bp3-minimal bp3-icon-user">
             Client Only
           </button>
         </a>
-      </Link>
+      </Link>}
       <Link href="/about">
         <a className={pathname === "/about" ? "is-active" : ""}>
           <button className="bp3-button bp3-minimal bp3-icon-cog"></button>
@@ -40,6 +45,6 @@ const NavbarComponent = ({ router: { pathname } }) => (
     </div>
     {/* </div> */}
   </nav>
-);
+)};
 
 export default withRouter(NavbarComponent);

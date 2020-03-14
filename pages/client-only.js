@@ -1,9 +1,25 @@
 import Navbar from '../components/Navbar'
+import {useRouter} from 'next/router'
+import { useContext, useEffect } from 'react'
+
+import AppContext from '../app/context';
 
 import PostList from '../components/PostList'
 import { withApollo } from '../apollo/apollo'
 
-const ClientOnlyPage = props => (
+const ClientOnlyPage = props => {
+  const {state} = useContext(AppContext)
+  const Router = useRouter()
+  // useEffect(() => {
+  //   if(!state.user) {
+  //     Router.push('/login')
+  //   }
+  // }, [])
+ if(!state.user){
+   return(<div>NO USER</div>)
+ }
+  
+  return (
   <div>
     <Navbar />
     <div>
@@ -21,6 +37,6 @@ const ClientOnlyPage = props => (
     </div>
     <PostList />
   </div>
-)
+)}
 
 export default withApollo()(ClientOnlyPage)
