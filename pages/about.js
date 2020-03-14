@@ -1,9 +1,9 @@
 
-import Header from '../components/Header'
+import Navbar from '../components/Navbar'
 
 const AboutPage = () => (
   <div>
-    <Header />
+    <Navbar />
     <article>
       <h1>The Idea Behind This Example</h1>
       <p>

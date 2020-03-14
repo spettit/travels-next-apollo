@@ -1,11 +1,11 @@
-import Header from '../components/Header'
+import Navbar from '../components/Header'
 
 import PostList from '../components/PostList'
 import { withApollo } from '../apollo/apollo'
 
 const ClientOnlyPage = props => (
   <div>
-    <Header />
+    <Navbar />
     <div>
       ℹ️ This example shows how to disable apollos query fetching on the server.
       If you <a href="/client-only">reload</a> this page, you will see a loader

@@ -1,30 +1,22 @@
 import Head from 'next/head'
-import Header from '../components/Header'
-
-import PostList from '../components/PostList'
 import { withApollo } from '../apollo/apollo'
+
+import Navbar from '../components/Navbar'
+import Map from '../components/map'
+
+
+
 
 const IndexPage = () => (
   <div>
     <Head>
       <title>Sean's Travel Site</title>
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAov8VpvRFBsCiFsB8pZIMa4P2NEP0qwcU&libraries=geometry"></script>
+   
     </Head>
-    <Header />
-    <div>
-      ℹ️ This example shows how to fetch all initial apollo queries on the
-      server. If you <a href="/">reload</a> this page you won't see a loader
-      since Apollo fetched all needed data on the server. This prevents{' '}
-      <a
-        href="https://nextjs.org/blog/next-9#automatic-static-optimization"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        automatic static optimization
-      </a>{' '}
-      in favour of full Server-Side-Rendering.
-    </div>
-
-    <PostList />
+    <Navbar />
+   <h1>Travel Maps</h1>
+   <Map />
   </div>
 )
 
