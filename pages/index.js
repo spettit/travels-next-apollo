@@ -3,7 +3,7 @@ import { withApollo } from '../apollo/apollo'
 import { Button } from "@blueprintjs/core";
 
 import Navbar from '../components/Navbar'
-import Map from '../components/map'
+import Map from '../components/Map'
 
 
 
