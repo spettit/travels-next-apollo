@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import { withApollo } from '../apollo/apollo'
+import { Button } from "@blueprintjs/core";
 
 import Navbar from '../components/Navbar'
 import Map from '../components/map'

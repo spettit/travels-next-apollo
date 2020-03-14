@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useContext } from "react";
 // import MapContext from "../../../MapContext";
 // import { navigate } from '@reach/router'
 
-const google = window.google;
+// const google = window.google;
 
 var map;
 

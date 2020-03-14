@@ -1,0 +1,10 @@
+
+
+POST https://travel-strapi-app.herokuapp.com/auth/local/
+
+content-type: application/json
+
+{
+    "identifier":  "david@was.not",
+    "password": "davidwas123"
+}
