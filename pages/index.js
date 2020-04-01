@@ -16,7 +16,7 @@ const IndexPage = () => {
   <div>
     
     <Navbar />
-   <h1>Travel Maps</h1>
+   <h1>Travel Map</h1>
    <Map />
    <Button text='login' onClick={() => dispatch({type: "setUser", payload: "new puser"})} />
    <Button text='logout' onClick={() => dispatch({type: "signout"})} />
